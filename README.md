@@ -23,9 +23,10 @@ https://www.kaggle.com/c/ieee-fraud-detection/submit
 ### Problem: data unbalance
 -	發現當threshold越小準確率越高 
 -	推測是因為訓練資料不平均的關係造成
-![image](https://github.com/Lisa06010416/Kaggle-Fraud-Detection/blob/master/image/Threshold1.png =50%x)
+<img width="150" height="150" src="https://github.com/Lisa06010416/Kaggle-Fraud-Detection/blob/master/image/Threshold1.png"/>
+
 -	把loss改成一個帶有權重的mse loss
-![image](https://github.com/Lisa06010416/Kaggle-Fraud-Detection/blob/master/image/Threshold2.png =50%x)
+<img width="150" height="150" src="https://github.com/Lisa06010416/Kaggle-Fraud-Detection/blob/master/image/Threshold2.png"/>
 
 ## Model Two (in modelTwo.ipynb)
 -	只有很少部分的Fraud User(0.2%)會有 Normal和Fraud 的交易紀錄參雜的情況
