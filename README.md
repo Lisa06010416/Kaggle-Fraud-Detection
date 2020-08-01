@@ -20,14 +20,17 @@ https://www.kaggle.com/c/ieee-fraud-detection/submit
 -	設定一個threshold去另機率高於threshold的為1(Fraud)、低於threshold的為0(Normal)
 ![image](https://github.com/Lisa06010416/Kaggle-Fraud-Detection/blob/master/image/Model%201.png)
 
-#### Problem: data unbalance
+### Problem: data unbalance
 -	發現當threshold越小準確率越高 
 -	推測是因為訓練資料不平均的關係造成
-![image](https://github.com/Lisa06010416/Kaggle-Fraud-Detection/blob/master/image/Threshold1.png)
+![image](https://github.com/Lisa06010416/Kaggle-Fraud-Detection/blob/master/image/Threshold1.png =50%x)
 -	把loss改成一個帶有權重的mse loss
-![image](https://github.com/Lisa06010416/Kaggle-Fraud-Detection/blob/master/image/Threshold2.png)
-
-#### Problem: enhance performance
+![image](https://github.com/Lisa06010416/Kaggle-Fraud-Detection/blob/master/image/Threshold2.png =50%x)
 
 ## Model Two (in modelTwo.ipynb)
+-	只有很少部分的Fraud User(0.2%)會有 Normal和Fraud 的交易紀錄參雜的情況
+- 因此將同一個使用者的交易一起判斷是否有Fraud 也許是個可行的方法
+- 使用Attention將多筆交易資訊一起參考
 ![image](https://github.com/Lisa06010416/Kaggle-Fraud-Detection/blob/master/image/Model%202.png)
+
+# Predict Fraud User
