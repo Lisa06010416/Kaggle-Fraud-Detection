@@ -5,7 +5,7 @@ https://www.kaggle.com/c/ieee-fraud-detection/submit
 ##  Feature Selection (in featureSelect.ipynb )
 - 使用kernel https://www.kaggle.com/cdeotte/xgb-fraud-with-magic-0-9600
 > - 用 card1_addr1_D1n 三個feature來標示user
-> - 最後一筆交易紀錄有263個feature
+> - 處理過後一筆交易紀錄有263個feature
 
 ## Data Preprocess (in seqDataPreprocess.ipynb)
 - 將資料normalization
@@ -24,14 +24,18 @@ https://www.kaggle.com/c/ieee-fraud-detection/submit
 -	發現當threshold越小準確率越高 
 -	推測是因為訓練資料不平均的關係造成
 <img width="300" height="300" src="https://github.com/Lisa06010416/Kaggle-Fraud-Detection/blob/master/image/Threshold1.png"/>
-
 -	把loss改成一個帶有權重的mse loss
 <img width="300" height="300" src="https://github.com/Lisa06010416/Kaggle-Fraud-Detection/blob/master/image/Threshold2.png"/>
+- best score : publish 0.811825 private 0.770388
 
 ## Model Two (in modelTwo.ipynb)
 -	只有很少部分的Fraud User(0.2%)會有 Normal和Fraud 的交易紀錄參雜的情況
 - 因此將同一個使用者的交易一起判斷是否有Fraud 也許是個可行的方法
 - 使用Attention將多筆交易資訊一起參考
+- best score : publish 0.809072 private 0.758492
 ![image](https://github.com/Lisa06010416/Kaggle-Fraud-Detection/blob/master/image/Model%202.png)
 
-# Predict Fraud User
+## Predict Fraud User (in fraudUser.ipynb)
+- 用 card1_addr1_D1n 三個feature來標示user
+- 如果一個user曾經有交易紀錄為Fraud那該user為fraud user
+- 預測結果在 userFraud.csv 和 userFraudwithTransID.csv
